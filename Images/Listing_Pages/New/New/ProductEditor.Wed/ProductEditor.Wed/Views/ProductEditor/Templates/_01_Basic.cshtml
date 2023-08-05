@@ -1,0 +1,30 @@
+﻿@using ProductEditor.Wed.Models.Enums
+@{
+
+    bool enableProductFamily = false;//ViewBag.EnableProductFamily != null ? ViewBag.EnableProductFamily : false;
+    bool enableLifecycle = false;//ViewBag.EnableLifecycle != null ? ViewBag.EnableLifecycle : false;
+}
+<script>
+    var enableProductFamily = ('@enableProductFamily' == 'True') ? true : false;
+    var enableLifecycle = ('@enableLifecycle' == 'True') ? true : false;
+</script>
+<script type="text/x-template" id="section-basic-template">
+    <div class="card-box p-0" id="info">
+       
+        <div class="card-body">
+            <div class="row px-1">
+                <div class="col-sm-6 col-12 form-group">
+                    <label>Product Name</label>
+                    <span class="form-small-required">*</span>
+                    <input   type="text" name="Product Name" class="form-control" placeholder="Product name" value=""  />
+                  
+                </div>
+               
+            </div>
+           
+        </div>
+       
+       
+       
+    </div>
+</script>

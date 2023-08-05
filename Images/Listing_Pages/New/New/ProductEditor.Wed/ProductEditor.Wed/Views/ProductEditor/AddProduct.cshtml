@@ -1,0 +1,231 @@
+﻿@Styles.Render("~/bundles/admin-style")
+@Scripts.Render("~/bundles/vue-main-js")
+@*@Html.Partial("~/Views/ProductEditor/Templates/TreeItem.cshtml")*@
+@Html.Partial("~/Views/ProductEditor/Templates/_01_Basic.cshtml")
+@{
+
+
+    bool enableLifecycle = false;//ViewBag.EnableProductFamily;
+
+
+
+
+    bool basicInformationEditEnabled = false;//UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditBasicInformation);
+    bool descriptionEditEnabled = false;// UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditDescription);
+    bool productIdentifierEditEnabled = false;// UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditProductIdentifier);
+    bool imagesAndVideoEditEnabled = false;// UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditImagesAndVideo);
+    bool dimensionsEditEnabled = false;//UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditDimensions);
+    bool attributesEditEnabled = false;//UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditAttributes);
+    bool suppliersEditEnabled = false;//UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditSuppliers);
+    bool pricingEditEnabled = false;//UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditPricing);
+    bool inventoryAndFulfilmentEditEnabled = false;// UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditInventoryAndFulfilment);
+    bool variationsEditEnabled = false;//UserRoleManager.CheckRoleSectionPermission(IsUserRoleEnabledInlifeCycleRoles, lifecycleApplied, RoleConstantV3.PIMSectionEditVariations);
+
+
+    <script>
+
+      //  var userRolesJsonString = 'strUserRoleList';
+              //  var userRoles = JSON.parse(userRolesJsonString.replace(/&quot;/g, '"'));
+                //var currentProductFamilyId = 0;
+                //var lifecycleApplied = {};
+
+                var hasBasicInfoEditPermission = '@basicInformationEditEnabled' == 'True' ? true : false;;
+                var hasDescriptionEditPermission = '@descriptionEditEnabled' == 'True' ? true : false;;
+                var hasProductIdentifierEditPermission = '@productIdentifierEditEnabled' == 'True' ? true : false;;
+                var hasImagesAndVideoEditPermission = '@imagesAndVideoEditEnabled' == 'True' ? true : false;;
+                var hasDimensionsEditPermission = '@dimensionsEditEnabled' == 'True' ? true : false;;
+                var hasAttributesEditPermission = '@attributesEditEnabled' == 'True' ? true : false;;
+                var hasSuppliersEditPermission = '@suppliersEditEnabled' == 'True' ? true : false;;
+                var hasPricingEditPermission = '@pricingEditEnabled' == 'True' ? true : false;;
+                var hasInventoryAndFulfilmentEditPermission = '@inventoryAndFulfilmentEditEnabled' == 'True' ? true : false;;
+                var hasVariationsEditPermission = '@variationsEditEnabled' == 'True' ? true : false;;
+
+
+        //        function CheckAndApplyLifecycleRules() {
+        //            if (currentProductFamilyId != '' && currentProductFamilyId != '0') {
+        //                axiosInstance()
+        //                    .get('ProductEditor/GetLifecycleforproduct?productFamilyid=' + currentProductFamilyId)
+        //                    .then(function (response) {
+        //                    if (response.data != null) {
+        //                        lifecycleApplied = response.data;
+        //                        applyLifecyclePermissions(lifecycleApplied.steps[0], userRoles);
+        //                    }
+        //                    else {
+        //                        self.productLifecycle = null;
+        //                        self.productLifecycleSteps = null;
+        //                    }
+        //                });
+        //    }
+        //}
+
+        //function applyLifecyclePermissions(currentlifecycleStep, userroles) {
+        //    debugger;
+        //    for (i = 0; i <= currentlifecycleStep.sections.length - 1; i++) {
+        //        var role = userroles.filter(x => x.Id == currentlifecycleStep.sections[i]);
+        //        if (role[0] != null) {
+        //            if (role[0].Name.replace('.', '') == 'PIMSectionEditBasicInformation') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasBasicInfoEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditDescription') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasDescriptionEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditProductIdentifier') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasProductIdentifierEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditImagesAndVideo') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasImagesAndVideoEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditDimensions') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasDimensionsEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditAttributes') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasAttributesEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditSuppliers') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasSuppliersEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditPricing') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasPricingEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditInventoryAndFulfilment') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasInventoryAndFulfilmentEditPermission = false;
+        //            }
+        //            else if (role[0].Name.replace('.', '') == 'PIMSectionEditVariations') {
+        //                //self.isBasicInfoEditDisabled = true;
+        //                hasVariationsEditPermission = false;
+        //            }
+        //        }
+        //    }
+
+        //}
+
+
+    </script>
+}
+<script>
+    //function isValidNumber(val) {
+    //    return typeof val === "number" && val === val;
+    //}
+
+    //Vue.use(VeeValidate, {
+    //    classes: true,
+    //    classNames: {
+    //        valid: "is-valid",
+    //        invalid: "is-invalid"
+    //    }
+    //});
+
+    //Vue.use(window["vue-js-modal"].default, { dialog: true });
+    //Vue.component('treeselect', VueTreeselect.Treeselect);
+    //Vue.component('vuejs-datepicker', vuejsDatepicker);
+    //Vue.use(Toasted)
+    //Vue.use(VTooltip)
+</script>
+
+<script>
+    var advPurchaseFeatureToggle = '@ViewBag.AdvancedPurchaseDataFeatureToggle' == 'True' ? true : false;
+    var productDevelopmentFeatureToggle = '@ViewBag.ProductDevelopmentFeatureToggle' == 'True' ? true : false;
+</script>
+<section id="app_main">
+    <div class="row">
+        <div class="col-2 col-sm-2 links-col">
+            <h4 class="font-16 font-weight-bold text-center mb-2 pb-1">New Product</h4>
+            @*<div id="app_loader">
+                    <div class="loader-center">
+                        <img src="~/assets/images/loader.svg" alt="PIM" />
+                    </div>
+                </div>*@
+            <nav id="navbar" class="navbar">
+                <ul class="nav-menu">
+                    <li>
+                        <a data-scroll="info" href="#info" class="dot active" v-bind:class="sectionClass('section-basic')">
+                            <span><i class="mdi mdi-information"></i> <span class="text-show">Basic Information</span></span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+        <div class="col-10 col-sm-10 content-col">
+            <h4 class="font-16 font-weight-bold text-left mb-2 pb-1 d-block d-sm-none">New Product</h4>
+            <section id="info" class="section">
+                <section-basic :message="message.sectionBasic" ref="sectionBasic" v-on:validation-complete="updateValidation('section-basic', $event)" class="item"></section-basic>
+            </section>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-xs-12 fix-action-bar" style="display:none">
+            <button type="button" name="cancel" id="cancelAddForm" class="btn btn-light">Cancel</button>
+            <button v-on:click="validateAndPost()" type="submit" name="cancel" id="saveAddForm" class="btn btn-success show-loader">
+                <span>Save</span>
+                <img src="~/assets/themes/omnicxv3/images/loading.gif" class="loader-icon" alt="loader" height="20" />
+            </button>
+        </div>
+    </div>
+</section>
+@section scripts{
+    @Scripts.Render("~/bundles/add-product-js")
+    <script type="text/x-template" id="select2-template">
+        <select>
+            <slot></slot>
+        </select>
+    </script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".fix-action-bar").css("display", "block");
+            }, 5000);
+            //$("#navbar").hide();
+            //$("#app_loader").show();
+            // Show the div in 5s
+            //$("#navbar").delay(3000).fadeIn(500);
+            //$("#app_loader").delay(3000).fadeOut(500);
+        });
+
+        $(function () {
+
+            var link = $('#navbar a.dot');
+
+            // Move to specific section when click on menu link
+            link.on('click', function (e) {
+                var target = $($(this).attr('href'));
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 60
+                }, 600);
+                $(this).addClass('active');
+                e.preventDefault();
+            });
+
+            // Run the scrNav when scroll
+            $(window).on('scroll', function () {
+                scrNav();
+            });
+
+            // scrNav function
+            // Change active dot according to the active section in the window
+            function scrNav() {
+                var sTop = $(window).scrollTop();
+                $('section').each(function () {
+                    var id = $(this).attr('id'),
+                        offset = $(this).offset().top - 150,
+                        height = $(this).height();
+                    if (sTop >= offset && sTop < offset + height) {
+                        link.removeClass('active');
+                        $('#navbar').find('[data-scroll="' + id + '"]').addClass('active');
+                    }
+                });
+            }
+            scrNav();
+        });
+    </script>
+}
