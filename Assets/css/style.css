@@ -10,3 +10,26 @@
     text-decoration: none;
   }
   
+  .main-discount-banner {
+    display: flex;
+    justify-content: space-between; /* Place content at the beginning and end */
+    align-items: center;
+    background-color: #dc3545;
+    padding: 10px;
+    
+}
+
+.main-discount-banner span {
+    flex: 1; /* Let the span element take up available space */
+    text-align: center; /* Center the text within the span */
+    
+}
+
+.main-discount-banner i {
+    font-size: 20px;
+    cursor: pointer;
+}
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
