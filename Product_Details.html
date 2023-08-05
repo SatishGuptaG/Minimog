@@ -16,9 +16,12 @@
     <!-- Header Section Start -->
 
     <!-- First Navbar Start -->
-    <nav class="navbar bg-danger text-bg-primary">
-        <p class="mx-auto"><b>Free Delivery on orders over $200. Don’t miss discount.</b></p>
-    </nav>
+    <div class="main-discount-banner bg-danger text-white">
+        <span class="">Free Delivery on Orders Over $200. Don’t Miss the Discount.</span>
+        <i id="closeIcon" class="fa-solid fa-xmark fa-sm"></i>
+    </div>
+
+
     <!-- First Navbar End -->
 
     <!-- Second Navbar Start -->
@@ -107,6 +110,7 @@
     <!-- Carousel Start -->
     <main class="container">
         <div class="row">
+            <!-- left side -->
             <div class="col-6">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
@@ -145,23 +149,29 @@
                             class="d-block w-100" alt="product_fashion_19_a_1"></div>
                 </div>
             </div>
-            <div class="col-6 p-2">
-                <h1>Long-sleeve Maxi Dress</h1>
-                <h5>$126.00
-                    <i class="fa-solid fa-star float-end">(5 Reviews)</i>
-                    <i class="fa-solid fa-star float-end"></i>
-                    <i class="fa-solid fa-star float-end"></i>
-                    <i class="fa-solid fa-star float-end"></i>
-                    <i class="fa-solid fa-star float-end"></i>
-                </h5>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                    voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati…</p>
-
-                <div class="class">
+            <!-- right side -->
+            <div class="col-6">
+                <h1 class="py-1">Long-sleeve Maxi Dress</h1>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>$126.00</span>
+                    <span class="text-end">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        (5Reviews)
+                    </span>
+                </div>
+                <div>
+                    <p class="py-1">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                        praesentium
+                        voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati…</p>
+                </div>
+                <div class="my-1">
                     <h5>Color :</h5>
                     <button class="circular-color-button bg-black"></button>
                     <button class="circular-color-button bg-danger"></button>
-
                     <h5 class="p-2">Size :</h5>
                     <button type="button" class="btn btn-light">XS</button>
                     <button type="button" class="btn btn-light">S</button>
@@ -169,31 +179,30 @@
                     <button type="button" class="btn btn-light">L</button>
                     <button type="button" class="btn btn-light">XL</button>
                 </div>
-                <div class="container px-4 my-4">
-                    <div class="row gx-5">
-                        <div class="col-12 text-center ">
-                            <div class="border bg-black">
-                                <p class="text-white">Buy It Now</p>
-                            </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="bg-secondary rounded-1 border d-flex justify-content-between align-items-center p-2">
+                            <a  id="decrement"><i class="fa-solid fa-minus"></i></a>
+                            <span type="number" id="numberDisplay">1</span>
+                            <a  id="increment"><i class="fa-solid fa-plus"></i></a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <i class="fa-solid fa-arrow-right-arrow-left"></i> Add To Compare
-                    </div>
-                    <div class="col-2">
-                        <i class="fa-solid fa-share-nodes"></i>Share
-                    </div>
-                    <div class="col-4">
-                        <i class="fa-regular fa-circle-question"></i>Ask a Question
-                    </div>
-                    <div class="col-2">
-                        <i class="fa-solid fa-ruler"></i>Size Guid
+                    <div class="col-9">
+                        <div class="d-grid gap-2 col-12 mx-auto">
+                            <button class="btn btn-dark p-2" type="button">Add To Cart</button>
+                          </div>
                     </div>
                 </div>
-
-                <div class="row">
+                <div class="d-grid gap-2 col-12 mx-auto py-1">
+                    <button class="btn btn-dark" type="button">Buy It Now</button>
+                </div>
+                <div class="d-flex justify-content-between align-items-center py-2">
+                    <span><i class="fa-solid fa-arrow-right-arrow-left"></i> Add To Compare</span>
+                    <span> <i class="fa-solid fa-share-nodes"></i>Share</span>
+                    <span><i class="fa-regular fa-circle-question"></i>Ask a Question</span>
+                    <span> <i class="fa-solid fa-ruler"></i>Size Guid</span>
+                </div>
+                <div class="row py-3 border-top border-bottom">
                     <div class="col-2">
                         <P>Qty </P>
                         <P>SKU:</P>
@@ -205,60 +214,54 @@
                         <p>Basic,Dress,Shop</p>
                     </div>
                     <div class="col-6"></div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <i class="fa-solid fa-truck-fast"></i>Estimated Delivery:
-                            <i class="fa-solid fa-box"></i>Free Shipping & Returns:
-                        </div>
-                        <div class="col-4">
-                            <p>5 - 8 Aug, 2023</p>
-                            <p>On all orders over $220</p>
-                        </div>
-                        <div class="col-2"></div>
-
-                    </div>
-
-
                 </div>
-
-
-                </div>
-
                 <div class="row">
-                    <div class="mt-5 text-center">
-                        <h2>Related Products</h2>
-                        <p>Check items to add to the cart or Select All</p>
-                    </div>
-                    <div class="col-3 p-1">
-                        <img src="./Images/Long-sleeve Maxi Dress/product_fashion_22_a_1.jpeg" class="img-fluid">
-                        <p><b>Long-sleeve Maxi Dress</b></p>
-                        <p><b>$126.00</b></p>
-                        <button class="circular-color-button bg-black"></button>
-                        <button class="circular-color-button bg-danger"></button>
-                    </div>
-                    <div class="col-3 p-1">
-                        <img src="./Images/product_fashion_19_a_3.jpeg" class="img-fluid">
-                        <p><b>Long-sleeve Maxi Dress</b></p>
-                        <p><b>$126.00</b></p>
-                        <button class="circular-color-button bg-black"></button>
-                        <button class="circular-color-button bg-danger"></button>
-                    </div>
-                    <div class="col-3 p-1">
-                        <img src="./Images/product_fashion_19_a_3.jpeg" class="img-fluid">
-                        <p><b>Long-sleeve Maxi Dress</b></p>
-                        <p><b>$126.00</b></p>
-                        <button class="circular-color-button bg-black"></button>
-                        <button class="circular-color-button bg-danger"></button>
-                    </div>
-                    <div class="col-3 p-1">
-                        <img src="./Images/product_fashion_19_a_3.jpeg" class="img-fluid">
-                        <p><b>Long-sleeve Maxi Dress</b></p>
-                        <p><b>$126.00</b></p>
-                        <button class="circular-color-button bg-black"></button>
-                        <button class="circular-color-button bg-danger"></button>
-                    </div>
+                        <div class="col-12">
+                            <i class="fa-solid fa-truck-fast"></i>Estimated Delivery:
+                            <span>5 - 8 Aug, 2023</span>
+                        </div>
+                        <div class="col-12">
+                            <i class="fa-solid fa-box"></i>Free Shipping & Returns:
+                            <span>On all orders over $220</span>
+                        </div>
                 </div>
+
+            </div>
+
+            <div class="row">
+                <div class="mt-5 text-center">
+                    <h2>Related Products</h2>
+                    <p>Check items to add to the cart or Select All</p>
+                </div>
+                <div class="col-3 p-1">
+                    <img src="./Images/Long-sleeve Maxi Dress/product_fashion_22_a_1.jpeg" class="img-fluid">
+                    <p><b>Long-sleeve Maxi Dress</b></p>
+                    <p><b>$126.00</b></p>
+                    <button class="circular-color-button bg-black"></button>
+                    <button class="circular-color-button bg-danger"></button>
+                </div>
+                <div class="col-3 p-1">
+                    <img src="./Images/product_fashion_19_a_3.jpeg" class="img-fluid">
+                    <p><b>Long-sleeve Maxi Dress</b></p>
+                    <p><b>$126.00</b></p>
+                    <button class="circular-color-button bg-black"></button>
+                    <button class="circular-color-button bg-danger"></button>
+                </div>
+                <div class="col-3 p-1">
+                    <img src="./Images/product_fashion_19_a_3.jpeg" class="img-fluid">
+                    <p><b>Long-sleeve Maxi Dress</b></p>
+                    <p><b>$126.00</b></p>
+                    <button class="circular-color-button bg-black"></button>
+                    <button class="circular-color-button bg-danger"></button>
+                </div>
+                <div class="col-3 p-1">
+                    <img src="./Images/product_fashion_19_a_3.jpeg" class="img-fluid">
+                    <p><b>Long-sleeve Maxi Dress</b></p>
+                    <p><b>$126.00</b></p>
+                    <button class="circular-color-button bg-black"></button>
+                    <button class="circular-color-button bg-danger"></button>
+                </div>
+            </div>
 
 
     </main>
@@ -347,4 +350,49 @@
             $('#dynamicNav').removeClass('shadow p-3 mb-5 bg-body-tertiary');
         }
     });
+</script>
+<!-- Add this script at the end of the body or in a script tag -->
+<script>
+    const closeIcon = document.getElementById('closeIcon');
+    const banner = document.querySelector('.main-discount-banner');
+
+    closeIcon.addEventListener('click', () => {
+        banner.style.animation = 'fadeOut 1s'; // Add the fadeOut animation class
+        setTimeout(() => {
+            banner.style.display = 'none'; // Hide the banner after the animation completes
+        }, 1000); // Wait for the animation duration (1s) before hiding the banner
+    });
+
+
+
+     // Get references to the elements
+     const decrementButton = document.getElementById('decrement');
+    const incrementButton = document.getElementById('increment');
+    const numberDisplay = document.getElementById('numberDisplay');
+
+    // Initialize the current value to 1
+    let currentValue = 1;
+
+    // Function to increment the value
+    function increment() {
+        currentValue++;
+        updateDisplay();
+    }
+
+    // Function to decrement the value
+    function decrement() {
+        if (currentValue > 1) {
+            currentValue--;
+            updateDisplay();
+        }
+    }
+
+    // Function to update the displayed value
+    function updateDisplay() {
+        numberDisplay.innerText = currentValue;
+    }
+
+    // Add event listeners
+    decrementButton.addEventListener('click', decrement);
+    incrementButton.addEventListener('click', increment);
 </script>
